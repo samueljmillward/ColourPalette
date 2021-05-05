@@ -1,22 +1,62 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>
-        To share a photo from your phone with a friend, just press the button
-        below!
-      </Text>
-    </View>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          Here are some boxes of different colors:
+        </Text>
+        <View style={[styles.box, styles.cyan]}>
+          <Text style={styles.boxText}>Cyan: #2aa198</Text>
+        </View>
+        <View style={[styles.box, styles.blue]}>
+          <Text style={styles.boxText}>Blue: #268bd2</Text>
+        </View>
+        <View style={[styles.box, styles.magenta]}>
+          <Text style={styles.boxText}>Magenta: #268bd2</Text>
+        </View>
+        <View style={[styles.box, styles.orange]}>
+          <Text style={styles.boxText}>Orange: #268bd2</Text>
+        </View>
+      </View>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    paddingHorizontal: 10,
+    paddingTop: 40,
+  },
+  text: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  box: {
+    padding: 10,
     justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  cyan: {
+    backgroundColor: '#2aa198',
+  },
+  blue: {
+    backgroundColor: '#268bd2',
+  },
+  magenta: {
+    backgroundColor: '#d33682',
+  },
+  orange: {
+    backgroundColor: '#cb4b16',
+  },
+  boxText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
+
+export default App;
